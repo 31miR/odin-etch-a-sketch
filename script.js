@@ -32,6 +32,20 @@ function placeGridOnScreen(gridRows, grid) {
     }
 }
 
+function updateGridElementSize(grid) {
+    for(let i = 0; i < grid.length; ++i) {
+        for(let j = 0; j < grid[i].length; ++j) {
+            grid[i][j].style.width = 100/grid.length + 'vw';
+            grid[i][j].style.height = 100/grid.length + 'vw';
+        }
+    }
+}
+
+rows = createGridRows(GRID_HEIGHT);
+grid = createGrid(GRID_WIDTH, GRID_HEIGHT);
+updateGridElementSize(grid);
+placeGridOnScreen(rows, grid);
+
 /*
 TODO:
 -Create function that adds style to all the inside divs
